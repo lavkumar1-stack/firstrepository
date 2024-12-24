@@ -1,0 +1,59 @@
+let form=document.getElementById('signup-form')
+
+
+let username=document.getElementById('username')
+let email=document.getElementById('mail')
+let password=document.getElementById('password')
+let confirmPassword=document.getElementById('confirmpassword')
+
+let usernameError=document.getElementById('usernameErrors')
+let mailError=document.getElementById('mailErrors')
+let passwordError=document.getElementById('passwordErrors')
+let confirmPasswordError=document.getElementById('confirmPasswordErrors')
+
+form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    
+    let valid=true;
+
+    username.textContent='';
+    email.textContent='';
+    password.textContent='';
+    confirmPassword.textContent='';
+
+    if(username.value<3){
+        usernameError.textContent="enter minimum 3 characters";
+        usernameError.style.color="red";
+        
+    }else{
+        usernameError.textContent='';
+    }
+    if(!email.validity.valid){
+        mailError.textContent="enter valid mail";
+        mailError.style.color="red";
+        email.focus();
+    }else{
+        mailError.textContent='';
+    }
+    if(password.value.length<6){
+        passwordError.textContent="enter minimum 6 characters";
+    }
+    if(password.value!=confirmPassword.value){
+        confirmPasswordError.textContent="password is not matching";
+        confirmPasswordError.style.color="red";
+    }else{
+        confirmPasswordError.textContent='';
+    }
+
+    if(valid){
+        userData={
+            username:username.value,
+            email:email.value,
+            password:password.value
+        }
+    }
+    localStorage.setItem("signupData",JSON.stringify(userData));
+    alert("signup successfully redirect into login page");
+    form.reset();
+    window.location.href="login.html"
+})
