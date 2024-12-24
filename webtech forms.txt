@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="form-container">
+        <h1>signup</h1>
+          <form action="" id="signup-form" novalidate>
+        <div id="form-group">
+            <label for="username">username</label>
+            <input type="text" id="username" name="username" minlength="3" required placeholder="enter username">
+            <span class="errors" id="usernameErrors"></span>
+        </div>
+         <br>
+        <div id="form-group">
+            <label for="mail">Email-ID</label>
+            <input type="email" id="mail" name="mail" required placeholder="enter Email-ID">
+            <span class="errors" id="mailErrors"></span>
+        </div>
+         <br>
+        <div id="form-group">
+            <label for="password">password</label>
+            <input type="password" id="password" name="password" required placeholder="enter password">
+            <span class="errors" id="passwordErrors"></span>
+        </div>
+        <br>
+        <div id="form-group">
+            <label for="confirmpassword">confirm-password</label>
+            <input type="password" id="confirmpassword" name="confirmpassword" required placeholder="enter confirm-password">
+            <span class="errors" id="confirmPasswordErrors"></span>
+        </div>
+        <button type="submit" class="submit-btn">signup</button>
+          </form>
+          <div class="form-footer">
+            already have an account? <a href="#">Login</a>
+          </div>
+    </div>
+<script src="signup.js"></script>
+</body>
+</html>
